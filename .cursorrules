@@ -1,0 +1,151 @@
+{
+  "filePatterns": {
+    "components": {
+      "path": "src/components/**/*.tsx",
+      "rules": [
+        "Components should be functional and use TypeScript",
+        "Use ShadCN UI components where possible",
+        "Implement proper accessibility attributes",
+        "Export components as named exports",
+        "Include proper type definitions",
+        "Maintain single responsibility principle"
+      ]
+    },
+    "pages": {
+      "path": "src/app/**/*.tsx",
+      "rules": [
+        "Follow Next.js 13+ App Router conventions",
+        "Implement proper loading and error states",
+        "Use server components by default unless client interactivity is needed",
+        "Keep page components focused on layout and composition"
+      ]
+    },
+    "hooks": {
+      "path": "src/hooks/**/*.ts",
+      "rules": [
+        "Follow React hooks naming convention (use* prefix)",
+        "Include proper TypeScript types",
+        "Document hook parameters and return values",
+        "Handle loading and error states"
+      ]
+    },
+    "lib": {
+      "path": "src/lib/**/*.ts",
+      "rules": [
+        "Implement proper error handling",
+        "Include TypeScript types for all functions",
+        "Document API interactions",
+        "Use proper environment variables"
+      ]
+    },
+    "types": {
+      "path": "src/types/**/*.ts",
+      "rules": [
+        "Use interfaces for object types",
+        "Export types as named exports",
+        "Include proper JSDoc comments",
+        "Keep types focused and atomic"
+      ]
+    }
+  },
+  "naming": {
+    "components": {
+      "pattern": "^[A-Z][a-zA-Z]+$",
+      "example": "BookshelfCard"
+    },
+    "hooks": {
+      "pattern": "^use[A-Z][a-zA-Z]+$",
+      "example": "useStoryGeneration"
+    },
+    "utils": {
+      "pattern": "^[a-z]+[A-Za-z]*$",
+      "example": "generateStoryPrompt"
+    },
+    "types": {
+      "pattern": "^[A-Z][a-zA-Z]+$",
+      "example": "StorySettings"
+    }
+  },
+  "structure": {
+    "src": {
+      "components": {
+        "layout": ["Layout.tsx", "Header.tsx", "Footer.tsx"],
+        "auth": ["LoginForm.tsx", "SignupForm.tsx"],
+        "onboarding": ["OnboardingWizard.tsx", "StepIndicator.tsx"],
+        "bookshelf": ["BookGrid.tsx", "BookCard.tsx"],
+        "reader": ["PageView.tsx", "NavigationControls.tsx", "SpeechControls.tsx"]
+      },
+      "hooks": {
+        "auth": ["useAuth.ts"],
+        "story": ["useStoryGeneration.ts", "useImageGeneration.ts"],
+        "speech": ["useSpeechSynthesis.ts"]
+      },
+      "lib": {
+        "api": ["gemini.ts", "flux.ts"],
+        "db": ["supabase.ts"],
+        "utils": ["storyHelpers.ts", "imageHelpers.ts"]
+      },
+      "types": {
+        "models": ["book.ts", "user.ts", "story.ts"],
+        "api": ["gemini.ts", "flux.ts"]
+      }
+    }
+  },
+  "imports": {
+    "order": [
+      "react",
+      "next",
+      "external libraries",
+      "components",
+      "hooks",
+      "utils",
+      "types",
+      "styles"
+    ]
+  },
+  "documentation": {
+    "required": {
+      "components": [
+        "Component description",
+        "Props interface",
+        "Usage example"
+      ],
+      "hooks": [
+        "Hook description",
+        "Parameters",
+        "Return value",
+        "Usage example"
+      ],
+      "utils": [
+        "Function description",
+        "Parameters",
+        "Return value",
+        "Example"
+      ]
+    }
+  },
+  "testing": {
+    "patterns": {
+      "components": "**/*.test.tsx",
+      "hooks": "**/*.test.ts",
+      "utils": "**/*.test.ts"
+    },
+    "naming": {
+      "pattern": "^.*\\.test\\.(ts|tsx)$"
+    }
+  },
+  "linting": {
+    "typescript": {
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noImplicitAny": true
+    },
+    "react": {
+      "hooks": {
+        "rules-of-hooks": "error",
+        "exhaustive-deps": "warn"
+      }
+    }
+  }
+}
