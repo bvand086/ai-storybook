@@ -32,8 +32,8 @@ An AI-powered storybook application that creates personalized stories for young 
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
-   cd readingapp
+   git clone https://github.com/bvand086/ai-storybook.git
+   cd ai-storybook
    ```
 
 2. Install dependencies:
@@ -83,7 +83,7 @@ src/
 │   └── reader/        # Story reader components
 ├── hooks/             # Custom React hooks
 ├── lib/               # Utility functions and API clients
-│   ├── api/          # API integration
+��   ├── api/          # API integration
 │   ├── db/           # Database utilities
 │   └── utils/        # Helper functions
 └── types/            # TypeScript type definitions
